@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="vcpg">
+      <UniqueIdentifier>{7674befe-1c0e-4bbb-8a53-3b3cdddc466f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PascalTriangle\vcpkg.json">
+      <Filter>vcpg</Filter>
+    </None>
+    <None Include="PascalTriangle\vcpkg-configuration.json">
+      <Filter>vcpg</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PascalTriangle\PascalTriangleCalculator.cpp" />
+    <ClCompile Include="PascalTriangle\PascalTrianglePrinter.cpp" />
+    <ClCompile Include="PascalTriangle\Program.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PascalTriangle\PascalTriangleCalculator.h" />
+    <ClInclude Include="PascalTriangle\PascalTrianglePrinter.h" />
+  </ItemGroup>
+</Project>
