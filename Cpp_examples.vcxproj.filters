@@ -12,6 +12,7 @@
     <None Include="PascalTriangle\vcpkg-configuration.json">
       <Filter>vcpg</Filter>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PascalTriangle\PascalTriangleCalculator.cpp" />

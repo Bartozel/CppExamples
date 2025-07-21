@@ -2,5 +2,9 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="RandomNumberGuessingGame.cpp" />
+    <ClCompile Include="NumberGenerator.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="NumberGenerator.h" />
   </ItemGroup>
 </Project>
