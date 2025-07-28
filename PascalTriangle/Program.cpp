@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <ranges>
 #include "PascalTriangleCalculator.h"
 #include "PascalTrianglePrinter.h"

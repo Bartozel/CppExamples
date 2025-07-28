@@ -1,25 +1,23 @@
-#include <algorithm>
+﻿#include <algorithm>
 #include <iostream>
 #include <ranges>
 #include <vector>
 #include <string>
 
-using namespace std;
-
-void VectorPrinter(std::ranges::input_range auto&& range) {
-	std::ranges::for_each(range, [](const auto& e) { std::cout << e << "; "; });
-	std::cout << '\n';
+void ReferenceChanges(std::string& reference) {
+	reference = "Hey How";
 }
 
 int main() {
-	std::vector<int> _numbers{ 1, 2, 3, 4, 5 };
-	auto _view = _numbers | std::views::take(2);
+	std::string str = "Ahoj";
+	std::string& strRef = str;
 
-	VectorPrinter(_numbers);
-	VectorPrinter(_view);
+	std::cout << str + "\n";
+	std::cout << "Reference: " + strRef + "\n";
 
-	_numbers[0] = 122;
-	VectorPrinter(_view);
+	ReferenceChanges(strRef);
+	std::cout << "Reference 2: " + strRef + "\n";
 
 	return 0;
 }
+

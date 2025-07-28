@@ -12,9 +12,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="NumberGenerator.cpp" />
-    <ClCompile Include="RandomNumberGuessingGame.cpp" />
+    <ClCompile Include="Program.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="IPrimeNumberGenerator.h" />
     <ClInclude Include="NumberGenerator.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
