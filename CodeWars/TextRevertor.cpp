@@ -49,7 +49,7 @@ std::string TextRevertor::reverse_words_2(const std::string &str)
 
     for(auto it = strView.rbegin(); it != strView.rend(); ++it){
         reversedStr[i++] = *it;
-    }ß
+    }
 
     return reversedStr;
 }
