@@ -1,0 +1,31 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: clang build CodeWars",
+            "command": "/usr/bin/clang++",
+            "args": [
+                "-fcolor-diagnostics",
+                "-fansi-escape-codes",
+                "-std=c++17",
+                "-g",
+                "${fileDirname}/Program.cpp",
+                "${fileDirname}/TextRevertor.cpp",
+                "-o",
+                "${fileDirname}/program"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Builds all CodeWars sources"
+        }
+    ],
+    "version": "2.0.0"
+}
