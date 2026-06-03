@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <vector>
 
 #include "TextRevertor.h"
@@ -52,6 +53,24 @@ std::string TextRevertor::reverse_words_2(const std::string &str)
     }
 
     return reversedStr;
+}
+
+// single allocation + in-place std::reverse per word (SIMD-optimized in libc++)
+std::string TextRevertor::reverse_words_3(const std::string &str)
+{
+    std::string result = str;
+    size_t start = 0;
+    const size_t n = result.size();
+
+    for (size_t i = 0; i <= n; i++) {
+        
+        if (i == n || result[i] == ' ') {
+            std::reverse(result.begin() + start, result.begin() + i);
+            start = i + 1;
+        }
+    }
+
+    return result;
 }
 
 std::vector<std::string_view> Split(const std::string& str, char delimiter){

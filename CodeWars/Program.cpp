@@ -11,10 +11,13 @@ int main()
     TextRevertor textRevertor;
 
     auto res_1 = Measurement(textRevertor, &TextRevertor::reverse_words);
-    std::cout << "result reverse_word " << res_1.count() << std::endl;
+    std::cout << "result reverse_word   " << res_1.count() << std::endl; // last test = 3.20466
 
     auto res_2 = Measurement(textRevertor, &TextRevertor::reverse_words_2);
-    std::cout << "result reverse_word_2 " << res_2.count() << std::endl;
+    std::cout << "result reverse_word_2 " << res_2.count() << std::endl;// last test = 3.60666
+
+    auto res_3 = Measurement(textRevertor, &TextRevertor::reverse_words_3);
+    std::cout << "result reverse_word_3 " << res_3.count() << std::endl;// last test = 1.87755
 
     return 0;
 }
