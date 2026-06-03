@@ -5,13 +5,31 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug CodeWars",
-            "type": "lldb",
+            "name": "C/C++: clang++ build and debug active file",
+            "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/program",
             "args": [],
+            "stopAtEntry": false,
             "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
             "preLaunchTask": "C/C++: clang build CodeWars"
+        }
+        ,
+        {
+            "name": "Run CodeWars Release",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/program_release",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "C/C++: clang build CodeWars Release"
         }
     ]
 }
