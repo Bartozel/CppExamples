@@ -4,32 +4,29 @@
 #include "TextRevertor.h"
 
 //pre-allocate new string a fill character by character retroactivally
-std::string TextRevertor::reverse_words(const std::string &str)
+std::string TextRevertor::reverse_words(std::string str)
 {   
-    size_t strSize = str.length();
-    std::string reverserStr(strSize, ' ');
+    size_t strSize = str.size();
+    std::string reverserStr = str;
     int counter = 0;
 
-    for(size_t i = 0; i < strSize; i++){
-        
-        counter++;
-        char nextChar = str[i + 1];
+    for(size_t i = 0; i <= strSize; i++){
 
-        if(nextChar == ' ' || nextChar == '\0'){
-            
+        if(i == strSize || str[i] == ' '){
             for(size_t j = 0; j < counter; j++){
-
-                reverserStr[i - j] = str[i - counter + j + 1];
+                reverserStr[i - 1 - j] = str[i - counter + j];
             }
-            counter = -1; // skip the space
+            counter = 0;
+        }
+        else{
+            counter++;
         }
     }
-
     return reverserStr; 
 }
 
 //
-std::string TextRevertor::reverse_words_2(const std::string &str)
+std::string TextRevertor::reverse_words_2(std::string str)
 {   
     std::string reversedStr(str.length(), ' ');
     std::string_view strView = str;
@@ -56,7 +53,7 @@ std::string TextRevertor::reverse_words_2(const std::string &str)
 }
 
 // single allocation + in-place std::reverse per word (SIMD-optimized in libc++)
-std::string TextRevertor::reverse_words_3(const std::string &str)
+std::string TextRevertor::reverse_words_3(std::string str)
 {
     std::string result = str;
     size_t start = 0;
@@ -71,6 +68,39 @@ std::string TextRevertor::reverse_words_3(const std::string &str)
     }
 
     return result;
+}
+
+std::string TextRevertor::reverse_words_4(std::string str)
+{
+  std::string out;
+  std::string cword;
+  for (char c : str) {
+    if (c == ' ') {
+      out += cword;
+      out += c;
+      cword = "";
+      continue;
+    }
+    cword = c + cword;
+  }
+  out += cword;
+  return out;
+}
+
+std::string TextRevertor::reverse_words_5(std::string str)
+{
+    auto begin = str.begin();
+    for (auto it = str.begin(); it != str.end(); ++it)
+    {
+        if (*it == ' ')
+        {
+            auto end = it;
+            std::reverse(begin, end);
+            begin = it + 1;
+        }
+    }
+    std::reverse(begin, str.end());
+    return str;
 }
 
 std::vector<std::string_view> Split(const std::string& str, char delimiter){
