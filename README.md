@@ -1,2 +1,0 @@
-# CppExamples
-Simple Cpp projects 
